@@ -488,6 +488,61 @@ body {
     document.getElementById('chat_id').value = chatId;
   }
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Campos que queremos guardar y precargar
+  const campos = ['cliente', 'cuit', 'email', 'telefono', 'direccion'];
+
+  // Precargar datos guardados al abrir el formulario
+  campos.forEach(id => {
+    const campo = document.getElementById(id);
+    if (campo && localStorage.getItem(id)) {
+      campo.value = localStorage.getItem(id);
+    }
+  });
+
+  // Guardar datos al enviar el formulario
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('submit', function() {
+      campos.forEach(id => {
+        const campo = document.getElementById(id);
+        if (campo) {
+          localStorage.setItem(id, campo.value);
+        }
+      });
+    });
+  }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Campos que queremos guardar y precargar
+  const campos = ['cliente', 'cuit', 'email', 'telefono', 'direccion'];
+
+  // Precargar datos guardados al abrir el formulario
+  campos.forEach(id => {
+    const campo = document.getElementById(id);
+    if (campo && localStorage.getItem(id)) {
+      campo.value = localStorage.getItem(id);
+    }
+  });
+
+  // Guardar datos al enviar el formulario
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('submit', function() {
+      campos.forEach(id => {
+        const campo = document.getElementById(id);
+        if (campo) {
+          localStorage.setItem(id, campo.value);
+        }
+      });
+    });
+  }
+});
+</script>
+
   
 </body>
 </html>
